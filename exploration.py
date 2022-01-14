@@ -114,6 +114,7 @@ fig = px.histogram(df.replace({target: {1: 'Aprovado', 0: 'Reprovado'}}),
                    marginal='rug', facet_col=target)
 fig.update_layout(xaxis_title='Número de clientes')
 st.plotly_chart(fig)
+st.caption('Os nomes das colunas acima podem não carregar corretamente caso esteja usando algum AdBlocker.')
 
 st.header('Visão multidimensional')
 st.markdown('Também conseguimos visualizar, ao mesmo tempo, a relação de diferentes dados. Como exemplo, temos aqui algumas categorias que tiveram alta correlação com a aprovação do crédito (ou não). Veja que realmente existem categorias em que predominam mais aprovações do que reprovações, e vice-versa. Isso nos ajuda a entender melhor os relacionamentos desses dados. Fique à vontade para interagir com o gráfico.')
