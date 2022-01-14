@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 ##########
 #Configuração do Streamlit
 ##########
-st.set_page_config(page_title='Inteledge - Simulador de Crédito', page_icon="💡", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title='Inteledge - Análise de Crédito', page_icon="💡", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 sns.set_context("talk")
 
@@ -168,4 +168,4 @@ for col in df.select_dtypes('object').columns[-8:]:
     fig.update_layout(barmode="relative", title=f'Distribuição dos dados para "{col}"')
     st.plotly_chart(fig)
     
-st.markdown('Instagram e Contato: [@inteledge.lab](https://instagram.com/inteledge.lab)')
+st.markdown('Siga-nos no Instagram! [@inteledge.lab](https://instagram.com/inteledge.lab)')
