@@ -69,7 +69,7 @@ with col1:
 
 st.title('Analytics para Dados de Crédito')
 st.markdown('O nosso trabalho não se resume a apenas criar algoritmos de Inteligência Artificial ou de gerar gráficos bonitos por si só, mas também o de gerar *insights* para você. Abaixo você pode ver alguns exemplos do tipo de conhecimento que podemos trazer ao analisar os dados.')
-st.markdown('Entenda os gráficos abaixo como exemplos, somente: existem várias possibilidades de análise de dados e determinamos as técnicas que fazem mais sentido especificamente para a base de dados que você possui. Ficou interessado? Entre em contato conosco e nos siga em @inteledge.lab no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://linkedin.com/inteledge.lab)!')
+st.markdown('Entenda os gráficos abaixo como exemplos, somente: existem várias possibilidades de análise de dados e determinamos as técnicas que fazem mais sentido especificamente para a base de dados que você possui. Ficou interessado? Entre em contato conosco e nos siga em @inteledge.lab no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://www.linkedin.com/company/inteledge/)!')
 st.markdown('Também [veja o simulador que construímos com IA para esta base de dados](https://share.streamlit.io/wmonteiro92/vendas-concessao-credito-xai-demo/main/predictions_xai.py).')
 
 # Amostra
@@ -169,4 +169,4 @@ for col in df.select_dtypes('object').columns[-8:]:
     fig.update_layout(barmode="relative", title=f'Distribuição dos dados para "{col}"')
     st.plotly_chart(fig, use_container_width=True)
     
-st.markdown('Siga-nos no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://linkedin.com/inteledge.lab)!')
+st.markdown('Siga-nos no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://www.linkedin.com/company/inteledge/)!')
