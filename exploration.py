@@ -69,7 +69,7 @@ with col1:
 
 st.title('Analytics para Dados de Crédito')
 st.markdown('O nosso trabalho não se resume a apenas criar algoritmos de Inteligência Artificial ou de gerar gráficos bonitos por si só, mas também o de gerar *insights* para você. Abaixo você pode ver alguns exemplos do tipo de conhecimento que podemos trazer ao analisar os dados.')
-st.markdown('Entenda os gráficos abaixo como exemplos, somente: existem várias possibilidades de análise de dados e determinamos as técnicas que fazem mais sentido especificamente para a base de dados que você possui. Ficou interessado? Entre em contato conosco e nos siga em [@inteledge.lab](https://instagram.com/inteledge.lab) no Instagram!')
+st.markdown('Entenda os gráficos abaixo como exemplos, somente: existem várias possibilidades de análise de dados e determinamos as técnicas que fazem mais sentido especificamente para a base de dados que você possui. Ficou interessado? Entre em contato conosco e nos siga em @inteledge.lab no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://linkedin.com/inteledge.lab)!')
 st.markdown('Também [veja o simulador que construímos com IA para esta base de dados](https://share.streamlit.io/wmonteiro92/vendas-concessao-credito-xai-demo/main/predictions_xai.py).')
 
 # Amostra
@@ -97,7 +97,7 @@ fig = px.imshow(df_corr, labels=dict(color="Correlação"),
                )
 fig.update_xaxes(side="top")
 fig.update_layout(width=600, height=600)
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 st.caption('Os nomes das colunas acima podem não carregar corretamente caso esteja usando algum AdBlocker.')
 
 st.write('Passe o mouse (ou toque, se estiver no celular) nos quadrados. Veja que existem alguns deles com uma cor diferente dos demais. Vamos analisar algumas dessas combinações de uma forma mais aprofundada agora.')
@@ -114,7 +114,7 @@ fig = px.histogram(df.replace({target: {1: 'Aprovado', 0: 'Reprovado'}}),
                    x='Valor pedido', color='Motivo do empréstimo',
                    marginal='rug', facet_col=target)
 fig.update_layout(xaxis_title='Número de clientes')
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 st.header('Visão multidimensional')
 st.markdown('Também conseguimos visualizar, ao mesmo tempo, a relação de diferentes dados. Como exemplo, temos aqui algumas categorias que tiveram alta correlação com a aprovação do crédito (ou não). Veja que realmente existem categorias em que predominam mais aprovações do que reprovações, e vice-versa. Isso nos ajuda a entender melhor os relacionamentos desses dados. Fique à vontade para interagir com o gráfico.')
@@ -138,7 +138,7 @@ fig = go.Figure(data=[go.Parcats(dimensions=dimensions,
                                  line={'color': df['Aprovar o crédito?'],
                                        'colorscale': colorscale},
                                  hoveron='color', hoverinfo='count+probability')])
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 # Violin plot
 st.markdown('Também conseguimos ver o relacionamento dos dados numéricos. Aqui, por exemplo, vemos a distribuição entre número de parcelas x aprovação (ou não) do crédito. Perceba que há uma *distribuição* maior de reprovações quanto maior é o número de parcelas.')
@@ -148,7 +148,7 @@ fig = px.violin(df.replace({target: {0: 'Reprovado', 1: 'Aprovado'}}),
           box=True,
           color=target)
 fig.update_layout(showlegend=False)
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 # Pairplot
 st.markdown('Se quiser, também podemos ver vários desses relacionamentos ao mesmo tempo com várias colunas. Veja que nem todos os dados são bem divididos: não há uma linha divisória entre o que é aprovação e o que é reprovação, e tudo está bem misturado. Isto pode se assemelhar muito com os seus próprios dados: mesmo assim, conseguimos criar bons modelos de IA para prever resultados.')
@@ -167,6 +167,6 @@ for col in df.select_dtypes('object').columns[-8:]:
     fig.add_bar(x=values_aprovado[0], y=100*values_aprovado[1]/(values_aprovado[1]+values_reprovado[1]), name='Aprovado')
     fig.add_bar(x=values_reprovado[0], y=100*values_reprovado[1]/(values_aprovado[1]+values_reprovado[1]), name='Reprovado')
     fig.update_layout(barmode="relative", title=f'Distribuição dos dados para "{col}"')
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
     
-st.markdown('Siga-nos no Instagram! [@inteledge.lab](https://instagram.com/inteledge.lab)')
+st.markdown('Siga-nos no [Instagram](https://instagram.com/inteledge.lab) e no [LinkedIn](https://linkedin.com/inteledge.lab)!')
